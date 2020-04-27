@@ -11,7 +11,7 @@ public class Serienschaltung_ue02_serienschaltung {
     private  double[] widerstandsFeld;
 
     private void updateSpannung() {
-        if(widerstandsFeld == null) {
+        if (widerstandsFeld == null) {
             spannung = 0;
         } else {
            for (int i = 0; i < widerstandsFeld.length; i++) {
@@ -20,8 +20,12 @@ public class Serienschaltung_ue02_serienschaltung {
         }
     }
     
-    public void addWiderstand(double widerstandInOhm) {
-       if(widerstandsFeld == null) {
+    public void addWiderstand (double widerstandInOhm) throws InvalidResistorValueException {
+       if (widerstandInOhm < 0 || widerstandInOhm > 10E6) {
+           throw new InvalidResistorValueException (widerstandInOhm);
+       }
+       
+       if (widerstandsFeld == null) {
             widerstandsFeld = new double[1];
             widerstandsFeld[0] = widerstandInOhm;
         } else {
