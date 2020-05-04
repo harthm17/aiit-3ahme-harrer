@@ -1,16 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ue02_serienschaltung;
 
-
+/**
+ *
+ * @author Thomas Harrer
+ */
 public class InvalidResistorValueException extends Exception {
     private final double invalidValue;
 
     public InvalidResistorValueException(double invalidValue) {
-        super("Fehler aufgetreten");       
+        super("Fehler aufgetreten = " + invalidValue);       
         this.invalidValue = invalidValue;
     }
     
