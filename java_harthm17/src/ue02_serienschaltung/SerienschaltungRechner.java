@@ -7,28 +7,28 @@ import java.util.Scanner;
  * @author Thomas Harrer
  */
 public class SerienschaltungRechner {
-    public static void main(String[] args) {
+    public static void main (String[] args) {
         final Serienschaltung serienschaltung = new Serienschaltung();
-        Scanner scanner = new Scanner(System.in);
-
-        while(true) {
-            try {
-                System.out.print("Strom [A]: ");
-                final double strom = scanner.nextDouble();
-                serienschaltung.setStrom(strom);
-                break;
-            } catch (java.util.InputMismatchException exception) {
-
-            }
-        }
-
         try {
-            while(true) {
-                System.out.print("Widerstand [Ohm]: ");
-                final double widerstand = scanner.nextDouble();
+            System.out.print("Strom [A]: ");
+            final double strom = new Scanner (System.in).nextDouble();
+            //final double strom = 0.5;
+            serienschaltung.setStrom(strom);
+        } catch (Exception exception) {
+            exception.printStackTrace(System.out);
+            System.exit(1);
+        }
+        
+        while (true) {
+            System.out.print("Widerstand [Ohm]: ");
+            double widerstand = new Scanner(System.in).nextDouble();
+            try {
                 serienschaltung.addWiderstand(widerstand);
+            } catch (InvalidResistorValueException exception) {
+                System.out.print("Ergebnis:");
+                System.out.print(serienschaltung);
+                return;
             }
-        } catch(InvalidResistorValueException ex) {
         }
     }
 }

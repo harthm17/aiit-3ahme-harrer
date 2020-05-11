@@ -14,5 +14,5 @@ public class InvalidResistorValueException extends Exception {
     
     public double getInvalidValue() {
         return invalidValue;
-    }
+    }  
 }

@@ -16,6 +16,7 @@ public class Serienschaltung {
         if (widerstandsFeld == null) {
             spannung = 0;
         } else {
+           spannung = 0.0;
            for (int i = 0; i < widerstandsFeld.length; i++) {
                 spannung += strom * widerstandsFeld[i];
             } 
@@ -43,7 +44,7 @@ public class Serienschaltung {
     }     
 
     public double getStrom() {
-        return 0; 
+        return strom; 
     }
 
     public void setStrom(double strom) {
@@ -52,7 +53,7 @@ public class Serienschaltung {
     } 
 
     public double getSpannung() {
-        return 0;
+        return spannung;
     }
 
     @Override
