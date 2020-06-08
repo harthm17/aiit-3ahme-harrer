@@ -1,37 +1,57 @@
 package ue05_TestKoerperGruppe;
 
+import java.util.Locale;
+
+
 /**
  *
- * @author Thomas Harrer
+ * @author harthm17
  */
 public class Kugel extends Koerper {
     private double r;
 
-    public Kugel(double r, double dichte) {
-        super(dichte);
+
+    public Kugel (double r, double dichte) throws IllegalArgumentException {
+        super(0.0);
+        if (r <= 0) {
+            throw new IllegalArgumentException("Invalid parameter r");
+        }
         this.r = r;
     }
 
-    public double getR() {
+    public double getR () {
         return r;
     }
 
-    public void setR(double r) {
+
+    public void setR (double r) {
         this.r = r;
     }
-   
+
+
+    public double getDichte () {
+        return dichte;
+    }
+
+
+    public void setDichte (double dichte) {
+        this.dichte = dichte;
+    }
+    
+    
     @Override
-    public double oberfläche() {
-        return 4 * Math.PI * r * r;
+    public double oberflaeche () {
+        return 4 * r * r * Math.PI;
     }
     
     @Override
-    public double volumen() {
-        return (4/3) * Math.PI * r * r * r;
+    public double volumen () {
+        return 4 / 3 * Math.PI * Math.pow(r, 3);
     }
 
     @Override
-    public String toString() {
-        return "Kugel{" + "r=" + r + '}';
+    public String toString () {
+        return String.format(Locale.ENGLISH, "{\"r\":%e,\"dichte\":%e}", r, dichte);
     }
+    
 }
