@@ -13,7 +13,7 @@ public abstract class Koerper {
     protected double dichte;
 
 
-    public Koerper (double dichte) throws IllegalArgumentException {
+    public Koerper (double dichte) {
         if (dichte < 0) {
             throw new IllegalArgumentException("Invalid parameter dichte");
         }
@@ -36,5 +36,6 @@ public abstract class Koerper {
         
     public double masse () {
         return volumen() * dichte;
-    }      
+    }
+    
 }

@@ -11,7 +11,7 @@ public class Kugel extends Koerper {
     private double r;
 
 
-    public Kugel (double r, double dichte) throws IllegalArgumentException {
+    public Kugel (double r) {
         super(0.0);
         if (r <= 0) {
             throw new IllegalArgumentException("Invalid parameter r");
@@ -19,6 +19,12 @@ public class Kugel extends Koerper {
         this.r = r;
     }
 
+    public Kugel(double r, double dichte) {
+        super(dichte);
+        this.r = r;
+    }
+ 
+    
     public double getR () {
         return r;
     }
@@ -28,17 +34,6 @@ public class Kugel extends Koerper {
         this.r = r;
     }
 
-
-    public double getDichte () {
-        return dichte;
-    }
-
-
-    public void setDichte (double dichte) {
-        this.dichte = dichte;
-    }
-    
-    
     @Override
     public double oberflaeche () {
         return 4 * r * r * Math.PI;
