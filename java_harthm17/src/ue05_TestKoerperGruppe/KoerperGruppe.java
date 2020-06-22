@@ -11,7 +11,7 @@ import java.util.List;
  * @author harthm17
  */
 public class KoerperGruppe {
-    private final List<Koerper> koerperListe = new ArrayList();
+    private final List<Koerper> koerperListe = new ArrayList<>();
     private double dichte;
     
     public KoerperGruppe() {
@@ -38,6 +38,7 @@ public class KoerperGruppe {
 
 
     public boolean add (Koerper k) {
+        k.setDichte(dichte);
         return koerperListe.add(k);
     }
 
