@@ -8,8 +8,8 @@ public abstract class Component {
     
     private final String id;
     private final double value;
-    private double voltage;
-    private double current;
+    double voltage;
+    double current;
 
     public Component(String id, double value) {
         this.id = id;
@@ -39,6 +39,12 @@ public abstract class Component {
     public void setCurrent(double current) {
         this.current = current;
     }
+    
+    /*
+    power(),
+    formattedValue(),
+    formattedValue(locale:Locale),
+    */
 
     @Override
     public String toString() {
