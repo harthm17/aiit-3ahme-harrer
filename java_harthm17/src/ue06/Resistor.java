@@ -18,12 +18,14 @@ public class Resistor extends Component {
 
     @Override
     public void setCurrent (double current) {
-        this.current = current;
+        super.setCurrent(current); 
+        super.setVoltage(current * getValue());
     }
     
     @Override
     public void setVoltage (double voltage) {
-        this.voltage = voltage;
+        super.setVoltage(voltage); 
+        super.setCurrent(voltage / getValue());
     }
 
     @Override

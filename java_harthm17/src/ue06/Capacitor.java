@@ -14,6 +14,10 @@ public class Capacitor extends Component {
         super(id, value);
     }
 
+    void Capacitor (String c1, double d) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     @Override
     public String unit() {
         return "F";
